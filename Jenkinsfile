@@ -19,7 +19,7 @@ pipeline{
         }
         stage(scan){
             steps{
-                sh 'docker scan shravanipranay/spc -y' 
+                sh 'docker scan shravanipranay/spc' 
             }
         }
     }
