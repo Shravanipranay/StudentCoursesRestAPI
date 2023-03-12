@@ -10,8 +10,16 @@ pipeline{
         stage( 'image_build'){
             steps{
                 sh 'sudo docker image build -t shravanipranay/spc:latest .'
-                sh 'sudo docker image push shravanipranay/spc:latest'
-                sh 'docker scan shravanipranay/spc'
+            }
+        }
+        stage('push'){
+            steps{
+              sh 'sudo docker image push shravanipranay/spc:latest'  
+            }
+        }
+        stage(scan){
+            steps{
+                sh 'docker scan shravanipranay/spc -y' 
             }
         }
     }
