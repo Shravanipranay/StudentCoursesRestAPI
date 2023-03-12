@@ -11,7 +11,7 @@ pipeline{
             steps{
                 sh 'sudo docker image build -t shravanipranay/spc:latest .'
                 sh 'sudo docker image push shravanipranay/spc:latest'
-                sh 'sudo docker scan shravanipranay/spc'
+                sh 'docker scan shravanipranay/spc'
             }
         }
     }
